@@ -1,0 +1,11 @@
+
+import express from "express";
+import { getMyProfile } from "../controllers/userController.js";
+import protect from "../middleware/authMiddleware.js";
+
+const router = express.Router();
+
+// Protected Profile Route
+router.get("/profile", protect, getMyProfile);
+
+export default router;
